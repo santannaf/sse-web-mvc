@@ -1,7 +1,4 @@
 node('jenkins-slave') {
-      agent {
-            docker { image 'maven:3-alpine' }
-      }
      stage('test pipeline') {
           sh(script: """
                       echo "Hello"
