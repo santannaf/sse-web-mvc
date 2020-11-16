@@ -4,7 +4,7 @@ node('jenkins-slave') {
                       echo "Hello"
                       git clone https://github.com/santannaf/sse-web-mvc.git
                       cd ./sse-web-mvc
-                      mvn clean package
+                      docker build -f Dockerfile -t sse-web-mvc .
                      """)
       }
 }
