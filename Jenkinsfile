@@ -1,13 +1,19 @@
 node('jenkins-slave') {
      stage('test pipeline') {
-        sh(script: """
-                    echo "Hello"
-                    git clone https://github.com/santannaf/sse-web-mvc.git
+      agent {
+            docker { image 'maven:3.6.0-alpine' }
+      }
 
-                    cd ./sse-web-mvc
+      steps {
+              sh(script: """
+                          echo "Hello"
+                          git clone https://github.com/santannaf/sse-web-mvc.git
 
-                    docker build -f Dockerfile -t sse-web-mvc .
+                          cd ./sse-web-mvc
 
-                   """)
-    }
+                          mvn clean package
+
+                         """)
+          }
+      }
 }
