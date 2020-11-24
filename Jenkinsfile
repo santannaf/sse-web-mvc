@@ -4,7 +4,10 @@ node('jenkins-slave') {
      stage('test pipeline') {
         sh(script: """
             echo "hello"
-            docker run -v /var/run/docker.sock:/var/run/docker.sock hello-world
+            git clone https://github.com/santannaf/sse-web-mvc.git
+            cd ./sse-web-mvc
+
+            ocker build . -t test
         """)
     }
 }
