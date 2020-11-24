@@ -7,7 +7,7 @@ node('jenkins-slave') {
            git clone https://github.com/santannaf/sse-web-mvc.git
            cd ./sse-web-mvc
 
-           docker build . -t test
+           sudo docker build . -t test
         """)
     }
 }
