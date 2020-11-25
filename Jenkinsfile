@@ -15,6 +15,9 @@ node('jenkins-slave') {
             sudo usermod -aG docker jenkins
             sudo usermod -aG sudo jenkins
 
+            sudo systemctl start docker
+            sudo gpasswd -a jenkins docker
+
             sudo docker images
             sudo docker run --rm alpine /bin/sh -c "echo hello world"
         """)
