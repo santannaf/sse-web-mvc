@@ -8,7 +8,10 @@ node('jenkins-slave') {
             cd ./sse-web-mvc
 
             #####docker build . -t test
-            docker run --rm alpine /bin/sh -c "echo hello world"
+            #####docker run --rm alpine /bin/sh -c "echo hello world"
+
+            sudo w
+            less /etc/group
         """)
     }
 }
