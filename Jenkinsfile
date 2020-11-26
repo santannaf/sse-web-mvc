@@ -15,7 +15,7 @@ node('jenkins-slave') {
             sudo usermod -aG docker jenkins
             sudo usermod -aG sudo jenkins
 
-            sudo systemctl start docker
+            sudo dockerd
             sudo gpasswd -a jenkins docker
 
             sudo docker images
