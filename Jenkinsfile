@@ -16,7 +16,9 @@ node('jenkins-slave') {
 
 
             sudo rm -rf /var/run/docker.sock
-            sudo service docker restart
+
+
+            sudo service docker start
 
             sudo service --status-all
 
