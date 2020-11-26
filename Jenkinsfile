@@ -26,7 +26,7 @@ node('jenkins-slave') {
 
             ##sudo docker run hello-word
 
-            docker run --user jenkins --rm -v /var/run/docker.sock:/var/run/docker.sock hello-world
+            sudo docker run --user jenkins -v /var/run/docker.sock:/var/run/docker.sock hello-world
 
 
             ##docker run --rm alpine /bin/sh -c "echo hello world"
