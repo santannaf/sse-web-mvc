@@ -18,13 +18,14 @@ node('jenkins-slave') {
 
             sudo service --status-all
 
-            sudo nohup docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock
+            sudo dockerd
+            sudo service docker start
 
             sudo usermod -aG docker jenkins
             sudo usermod -aG sudo jenkins
             sudo gpasswd -a jenkins docker
 
-            sudo service docker start
+
 
             sudo service --status-all
 
@@ -32,9 +33,6 @@ node('jenkins-slave') {
             ##sudo docker run hello-word
 
             sudo docker run --user jenkins -v /var/run/docker.sock:/var/run/docker.sock hello-world
-
-
-            ##docker run --rm alpine /bin/sh -c "echo hello world"
         """)
     }
 }
