@@ -18,9 +18,9 @@ node('jenkins-slave') {
             sudo gpasswd -a jenkins docker
 
             sudo service --status-all
+
             sudo service docker start
 
-            systemctl --user start docker
             sudo service --status-all
 
 
