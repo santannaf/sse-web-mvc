@@ -20,8 +20,11 @@ node('jenkins-slave') {
             sudo service --status-all
             sudo service docker start
 
+            systemctl --user start docker
+            sudo service --status-all
 
-            sudo docker run --privileged --rm alpine /bin/sh -c "echo hello world"
+
+            docker run --help
         """)
     }
 }
