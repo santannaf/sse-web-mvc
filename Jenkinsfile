@@ -5,7 +5,7 @@ node('jenkins-slave') {
         sh(script: """
             echo "hello"
 
-            useradd -c "Jenkins user" -d /home/jenkins -u 10000 -g 10000 -m jenkins
+            sudo useradd -c "Jenkins user" -d /home/jenkins -u 10000 -g 10000 -m jenkins
 
             usermod -aG docker jenkins
             usermod -aG sudo jenkins
