@@ -26,7 +26,7 @@ node('jenkins-slave') {
 
             ##sudo docker run hello-word
 
-            docker run --rm -ti --group-add $(stat -c '%g' /var/run/docker.sock) -v /var/run/docker.sock:/var/run/docker.sock hello-world
+            docker run --user jenkins --rm -ti -v /var/run/docker.sock:/var/run/docker.sock hello-world
 
 
             ##docker run --rm alpine /bin/sh -c "echo hello world"
