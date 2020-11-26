@@ -34,7 +34,7 @@ node('jenkins-slave') {
 
             ##sudo docker run hello-word
 
-            sudo docker run --user jenkins -v /var/run/docker.sock:/var/run/docker.sock hello-world
+            docker run --user jenkins hello-world
         """)
     }
 }
