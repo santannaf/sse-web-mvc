@@ -15,11 +15,11 @@ node('jenkins-slave') {
 
 
 
+            sudo rm -rf /var/run/docker.sock
+            sudo service docker restart
 
             sudo service --status-all
 
-            sudo dockerd
-            sudo service docker start
 
             sudo usermod -aG docker jenkins
             sudo usermod -aG sudo jenkins
