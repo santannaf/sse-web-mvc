@@ -24,7 +24,8 @@ node('jenkins-slave') {
             sudo service --status-all
 
 
-            sudo docker run hello-word
+            ##sudo docker run hello-word
+            docker run --rm alpine /bin/sh -c "echo hello world"
         """)
     }
 }
