@@ -12,12 +12,17 @@ node('jenkins-slave') {
 
             ###### sudo groupadd -g 10000 jenkins
             ###### sudo useradd -c "Jenkins user" -d /home/jenkins -u 10000 -g 10000 -m jenkins
-            sudo usermod -aG docker jenkins
-            sudo usermod -aG sudo jenkins
 
-            sudo gpasswd -a jenkins docker
+
+
 
             sudo service --status-all
+
+            sudo nohup docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock
+
+            sudo usermod -aG docker jenkins
+            sudo usermod -aG sudo jenkins
+            sudo gpasswd -a jenkins docker
 
             sudo service docker start
 
