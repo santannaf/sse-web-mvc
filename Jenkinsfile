@@ -24,7 +24,7 @@ node('jenkins-slave') {
             sudo service --status-all
 
 
-            docker run hello-word
+            sudo docker run hello-word
         """)
     }
 }
