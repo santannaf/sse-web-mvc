@@ -17,10 +17,8 @@ node('jenkins-slave') {
 
             sudo gpasswd -a jenkins docker
 
-            sudo docker start
 
-            sudo docker images
-            sudo docker run --rm alpine /bin/sh -c "echo hello world"
+            sudo docker run --privileged --rm alpine /bin/sh -c "echo hello world"
         """)
     }
 }
