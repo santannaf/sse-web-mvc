@@ -17,6 +17,9 @@ node('jenkins-slave') {
 
             sudo gpasswd -a jenkins docker
 
+            sudo service --status-all
+            sudo service docker start
+
 
             sudo docker run --privileged --rm alpine /bin/sh -c "echo hello world"
         """)
